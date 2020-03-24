@@ -1,1 +1,3 @@
+This is the chrontab code for scheduling the script to run every minute
+
 * * * * * python3 /home/ryanbarrus/git/Kafka/WeatherApiProducer.py >> home/ryanbarrus/git/Kafka/log.txt
