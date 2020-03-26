@@ -30,8 +30,8 @@ r = requests.get(f'http://api.openweathermap.org/data/2.5/weather?id={CityID}&AP
 randomWeather = r.json()
 
 # API returns json with names beginning with numbers. This function renames these fields.
-import WeatherAvroSchemaRenamer
-randomWeather = WeatherAvroSchemaRenamer.rename(randomWeather)
+import Misc.WeatherAvroSchemaRenamer as renamer
+randomWeather = renamer.rename(randomWeather)
 
 
 # pprint(r.json())
