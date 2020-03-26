@@ -28,7 +28,7 @@ p = AvroProducer({'bootstrap.servers': "pkc-41973.westus2.azure.confluent.cloud:
                   }, default_value_schema=SavedSchema)
 
 topic = 'Race'
-dfRace = pd.read_csv('Race.csv', encoding='utf-8')
+dfRace = pd.read_csv('Misc/Race.csv', encoding='utf-8')
 
 for i,row in dfRace.iterrows():
     Race = eval(str(row.to_dict()))

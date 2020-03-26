@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "name": "Place",
+      "type": "int"
+    },
+    {
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "name": "Year",
+      "type": "string"
+    },
+    {
+      "name": "Team",
+      "type": "string"
+    },
+    {
+      "name": "AverageMile",
+      "type": "string"
+    },
+    {
+      "name": "Time",
+      "type": "string"
+    }
+  ],
+  "name": "RaceData",
+  "type": "record"
+}
