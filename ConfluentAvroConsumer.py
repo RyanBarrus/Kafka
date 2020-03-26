@@ -1,5 +1,4 @@
 from confluent_kafka.avro import AvroConsumer
-from confluent_kafka.avro import CachedSchemaRegistryClient
 from confluent_kafka.avro.serializer import SerializerError
 import pyodbc
 
