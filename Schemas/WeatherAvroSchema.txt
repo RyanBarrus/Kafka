@@ -39,6 +39,64 @@
       }
     },
     {
+      "default": {
+        "one_h": null,
+        "three_h": null
+      },
+      "name": "snow",
+      "type": {
+        "fields": [
+          {
+            "default": null,
+            "name": "one_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "three_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "snow",
+        "type": "record"
+      }
+    },
+    {
+      "default": {
+        "one_h": null,
+        "three_h": null
+      },
+      "name": "rain",
+      "type": {
+        "fields": [
+          {
+            "default": null,
+            "name": "one_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "three_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "rain",
+        "type": "record"
+      }
+    },
+    {
       "name": "dt",
       "type": "int"
     },
@@ -61,6 +119,22 @@
           {
             "name": "pressure",
             "type": "int"
+          },
+          {
+            "default": null,
+            "name": "sea_level",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "grnd_level",
+            "type": [
+              "null",
+              "int"
+            ]
           },
           {
             "name": "temp",
@@ -92,9 +166,20 @@
             "type": "string"
           },
           {
-            "default": 0,
+            "default": null,
             "name": "id",
-            "type": "int"
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "message",
+            "type": [
+              "null",
+              "float"
+            ]
           },
           {
             "name": "sunrise",
@@ -105,9 +190,12 @@
             "type": "int"
           },
           {
-            "default": 0,
+            "default": null,
             "name": "type",
-            "type": "int"
+            "type": [
+              "null",
+              "int"
+            ]
           }
         ],
         "name": "sys",
@@ -119,9 +207,12 @@
       "type": "int"
     },
     {
-      "default": 0,
+      "default": null,
       "name": "visibility",
-      "type": "int"
+      "type": [
+        "null",
+        "int"
+      ]
     },
     {
       "name": "weather",
