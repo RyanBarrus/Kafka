@@ -21,4 +21,4 @@ for i in range(10):
 
 p.flush(10)
 
-print("10 messages were produced to topic {}!".format(topic))
+print(f"10 messages were produced to topic {topic}!")
