@@ -1,0 +1,5 @@
+package com.kafka.constants;
+
+public interface IKafkaConstants {
+
+}

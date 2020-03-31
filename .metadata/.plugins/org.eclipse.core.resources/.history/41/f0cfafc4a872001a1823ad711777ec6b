@@ -1,0 +1,44 @@
+package com.kafka;
+
+import java.util.Properties;
+
+import org.apache.kafka.clients.CommonClientConfigs;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.common.config.SaslConfigs;
+
+public class ConfluentProducer implements IKafkaConstants {
+	
+	public static void main(String[] args) {
+        Properties props = new Properties();
+        props.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, KAFKA_BROKERS);
+        props.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, SECURITY_PROTOCOL_CONFIG);
+        props.put(SaslConfigs.SASL_MECHANISM, SASL_MECHANISM);
+        props.put(SaslConfigs.SASL_JAAS_CONFIG, SASL_JAAS_CONFIG);
+        props.put(ProducerConfig.ACKS_CONFIG, ACKS_CONFIG);
+        
+        String topic = "Training";
+        String key = null;
+        String value = "Let's produce in java";
+
+     
+        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
+        
+        final ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
+        
+        
+        producer.send(record);
+        
+//        for (int i = 0; i <= 10; i++) {
+//        	record.v
+//        	
+//        	
+//        }
+        
+        producer.close();
+        
+        
+    }
+	
+}

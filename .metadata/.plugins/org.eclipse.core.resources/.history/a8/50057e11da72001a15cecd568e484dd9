@@ -1,0 +1,15 @@
+package com.kafka;
+
+public class Race {
+	public int Place;
+	public String Name;
+	public String Year;
+	public String Team;
+	public String AverageMile;
+	public String Time;
+	
+	public String toString() {
+		return (Place + ":" + Name + ":" + Year + ":" + Team + ":" + AverageMile + ":" + Time);
+	}
+
+}
