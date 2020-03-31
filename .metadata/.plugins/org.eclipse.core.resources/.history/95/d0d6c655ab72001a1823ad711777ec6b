@@ -1,9 +1,0 @@
-package com.kafka;
-
-public interface IGeneralConfig {
-	
-	public static String confluentKey = "TC63BVUZ2QBK53MJ";
-	public static String confluentSecret = "o6QLpc2EYD9qHyxVDFuytoOVZg7RROkrSwKly7DEQz+nK3HrJrytY1p6btO8gsub";
-
-
-}
