@@ -15,6 +15,9 @@ client = CachedSchemaRegistryClient({
     'basic.auth.user.info': f'{confluentSchemaRegistryKey}:{confluentSchemaRegistrySecret}'
 })
 
+
+
+
 SavedSchema = client.get_latest_schema('Race-value')[1]
 
 p = AvroProducer({'bootstrap.servers': "pkc-41973.westus2.azure.confluent.cloud:9092",
@@ -29,6 +32,8 @@ p = AvroProducer({'bootstrap.servers': "pkc-41973.westus2.azure.confluent.cloud:
 
 topic = 'Race'
 dfRace = pd.read_csv('Resources/Race.csv', encoding='utf-8')
+
+print(dfRace)
 
 for i,row in dfRace.iterrows():
     Race = row.to_dict()

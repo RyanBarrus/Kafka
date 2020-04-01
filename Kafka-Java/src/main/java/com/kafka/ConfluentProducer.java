@@ -27,7 +27,6 @@ public class ConfluentProducer {
 
      
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
-        
         ProducerRecord<String, String> record = new ProducerRecord<>(topic, value);
         
      
