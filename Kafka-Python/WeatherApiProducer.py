@@ -34,6 +34,8 @@ import functions.WeatherAvroSchemaRenamer as renamer
 randomWeather = renamer.rename(randomWeather)
 
 
+
+
 # pprint(r.json())
 
 client = CachedSchemaRegistryClient({

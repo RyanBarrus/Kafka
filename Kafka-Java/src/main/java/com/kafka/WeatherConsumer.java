@@ -63,10 +63,11 @@ public class WeatherConsumer {
 					
 					String wString = weather.toString();
 					
-					Document weatherDocument = Document.parse( wString );
+					System.out.println(wString);
 					
+					Document weatherDocument = Document.parse( wString );
+
 			        randomWeather.insertOne(weatherDocument);
-			        
 					System.out.println("Inserted into MongoDB: " + weatherDocument);
 
 				}

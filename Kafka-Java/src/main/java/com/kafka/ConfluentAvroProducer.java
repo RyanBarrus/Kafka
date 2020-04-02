@@ -115,20 +115,6 @@ public class ConfluentAvroProducer {
 			e.printStackTrace();
 		}
         
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-
-       
-
-
 	}
 
 }
