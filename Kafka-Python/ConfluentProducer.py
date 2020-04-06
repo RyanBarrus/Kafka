@@ -16,10 +16,16 @@ p = Producer({'bootstrap.servers': "pkc-41973.westus2.azure.confluent.cloud:9092
 topic = 'Training'
 
 p.produce(topic, value='Lets learn kafka', partition=1)
+p.produce(topic, value='testing', partition=1)
+p.produce(topic, value='Lets learn kafka', partition=1)
+p.produce(topic, value='Lets learn kafka', partition=1)
 
-for i in range(10):
-    value = f'Record: {i}'
-    p.produce(topic, value=value, partition=1)
+p.produce(topic, value='testing', partition=1)
+p.produce(topic, value='Lets learn kafka', partition=1)
+
+# for i in range(10):
+#     value = f'Record: {i}'
+#     p.produce(topic, value=value, partition=1)
 
 p.flush()
 

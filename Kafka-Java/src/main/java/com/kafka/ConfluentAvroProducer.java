@@ -68,6 +68,8 @@ public class ConfluentAvroProducer {
         
         try {
         	int LatestID = client.getLatestSchemaMetadata("Race-value").getId();
+        	
+        	System.out.println(LatestID);
         	Schema schema = client.getById(LatestID);
         	
         	
