@@ -75,7 +75,7 @@ public class ConfluentAvroProducer {
         	
         	GenericRecord avroRecord = new GenericData.Record(schema);
         	
-            KafkaProducer<Object, Object> producer = new KafkaProducer<>(props);
+            KafkaProducer<String, GenericRecord> producer = new KafkaProducer<String,GenericRecord>(props);
             
 			BufferedReader reader = Files.newBufferedReader(Paths.get("src/main/Resources/Race.csv"));
 			
@@ -98,7 +98,7 @@ public class ConfluentAvroProducer {
 		            avroRecord.put("Time",Time);
 		            
 
-		            ProducerRecord<Object, Object> record = new ProducerRecord<>("Race", null, avroRecord);
+		            ProducerRecord<String, GenericRecord> record = new ProducerRecord<>("Race", null, avroRecord);
 		            
 		            producer.send(record);
 		            
