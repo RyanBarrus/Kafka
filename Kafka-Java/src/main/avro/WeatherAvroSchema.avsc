@@ -1,0 +1,270 @@
+{
+  "fields": [
+    {
+      "name": "base",
+      "type": "string"
+    },
+    {
+      "name": "clouds",
+      "type": {
+        "fields": [
+          {
+            "name": "all",
+            "type": "int"
+          }
+        ],
+        "name": "clouds",
+        "type": "record"
+      }
+    },
+    {
+      "name": "cod",
+      "type": "int"
+    },
+    {
+      "name": "coord",
+      "type": {
+        "fields": [
+          {
+            "name": "lat",
+            "type": "float"
+          },
+          {
+            "name": "lon",
+            "type": "float"
+          }
+        ],
+        "name": "coord",
+        "type": "record"
+      }
+    },
+    {
+      "default": {
+        "one_h": null,
+        "three_h": null
+      },
+      "name": "snow",
+      "type": {
+        "fields": [
+          {
+            "default": null,
+            "name": "one_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "three_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "snow",
+        "type": "record"
+      }
+    },
+    {
+      "default": {
+        "one_h": null,
+        "three_h": null
+      },
+      "name": "rain",
+      "type": {
+        "fields": [
+          {
+            "default": null,
+            "name": "one_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "default": null,
+            "name": "three_h",
+            "type": [
+              "null",
+              "float"
+            ]
+          }
+        ],
+        "name": "rain",
+        "type": "record"
+      }
+    },
+    {
+      "name": "dt",
+      "type": "int"
+    },
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "main",
+      "type": {
+        "fields": [
+          {
+            "name": "feels_like",
+            "type": "float"
+          },
+          {
+            "name": "humidity",
+            "type": "int"
+          },
+          {
+            "name": "pressure",
+            "type": "int"
+          },
+          {
+            "default": null,
+            "name": "sea_level",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "grnd_level",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "name": "temp",
+            "type": "float"
+          },
+          {
+            "name": "temp_max",
+            "type": "float"
+          },
+          {
+            "name": "temp_min",
+            "type": "float"
+          }
+        ],
+        "name": "main",
+        "type": "record"
+      }
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "sys",
+      "type": {
+        "fields": [
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "default": null,
+            "name": "id",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "default": null,
+            "name": "message",
+            "type": [
+              "null",
+              "float"
+            ]
+          },
+          {
+            "name": "sunrise",
+            "type": "int"
+          },
+          {
+            "name": "sunset",
+            "type": "int"
+          },
+          {
+            "default": null,
+            "name": "type",
+            "type": [
+              "null",
+              "int"
+            ]
+          }
+        ],
+        "name": "sys",
+        "type": "record"
+      }
+    },
+    {
+      "name": "timezone",
+      "type": "int"
+    },
+    {
+      "default": null,
+      "name": "visibility",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "weather",
+      "type": {
+        "items": {
+          "fields": [
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "icon",
+              "type": "string"
+            },
+            {
+              "name": "id",
+              "type": "int"
+            },
+            {
+              "name": "main",
+              "type": "string"
+            }
+          ],
+          "name": "weather_record",
+          "type": "record"
+        },
+        "type": "array"
+      }
+    },
+    {
+      "name": "wind",
+      "type": {
+        "fields": [
+          {
+            "default": null,
+            "name": "deg",
+            "type": [
+              "null",
+              "int"
+            ]
+          },
+          {
+            "name": "speed",
+            "type": "float"
+          }
+        ],
+        "name": "wind",
+        "type": "record"
+      }
+    }
+  ],
+  "name": "weather",
+  "namespace": "schemas.weather",
+  "type": "record"
+}

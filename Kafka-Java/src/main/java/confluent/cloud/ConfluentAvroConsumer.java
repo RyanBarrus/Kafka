@@ -1,4 +1,4 @@
-package com.kafka;
+package confluent.cloud;
 
 import java.time.Duration;
 import java.util.Arrays;
