@@ -50,8 +50,6 @@ public class ConfluentAvroSpecificProducer {
 			 
 			 for (CSVRecord csvRecord: csvParser) {
 				 
-				 	race thisRace = new race();
-				 	
 		            int Place = Integer.parseInt(csvRecord.get("Place"));
 		            String Name = csvRecord.get("Name");
 		            String Year = csvRecord.get("Year");
@@ -59,17 +57,11 @@ public class ConfluentAvroSpecificProducer {
 		            String AverageMile = csvRecord.get("AverageMile");
 		            String Time = csvRecord.get("Time");
 		            
-		            thisRace.setPlace(Place);
-		            thisRace.setName(Name);
-		            thisRace.setYear(Year);
-		            thisRace.setTeam(Team);
-		            thisRace.setAverageMile(AverageMile);
-		            thisRace.setTime(Time);
+		            race thisRace = new race(Place,Name,Year,Team,AverageMile,Time);
 		            
 		            ProducerRecord<String, race> record = new ProducerRecord<>("Race", null, thisRace);
 		            
 		            producer.send(record);
-		            
 		            
 		            System.out.println("Sent record to Kafka: " + record.value());
  
@@ -85,9 +77,7 @@ public class ConfluentAvroSpecificProducer {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        
-        
-        
+         
 	}
 
 }
