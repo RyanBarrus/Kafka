@@ -27,7 +27,7 @@ import org.apache.avro.generic.GenericData.Record;
 import org.apache.avro.generic.GenericDatumReader;
 import org.apache.avro.io.Decoder;
 import org.apache.avro.io.DecoderFactory;
-import org.apache.avro.AvroTypeException;
+
 import org.apache.avro.Schema;
 
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
@@ -110,9 +110,7 @@ public class WeatherAPIProducer {
 	            return(record);
 
 			            
-	        } catch (AvroTypeException e) {
-	        	e.printStackTrace();
-			} catch (Exception e) {
+	        } catch (Exception e) {
 				e.printStackTrace();
 			}
 	    return null;
