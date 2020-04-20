@@ -11,6 +11,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.common.config.SaslConfigs;
+import org.apache.kafka.common.header.Header;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 
@@ -57,6 +58,14 @@ public class WeatherConsumer {
 			while (true) {
 				ConsumerRecords<String, Record> records = consumer.poll(Duration.ofMillis(1000));
 				for (ConsumerRecord<String, Record> record : records) {
+					
+					
+					for (Header header : record.headers()) {
+						System.out.println("here");
+						System.out.println(header.toString());
+					}
+					System.out.println("after");
+					
 					
 					
 					Record weather = record.value();

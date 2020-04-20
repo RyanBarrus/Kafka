@@ -44,28 +44,37 @@ public class WeatherAPIProducer {
 
 	public static void main(String[] args) {
 		
-		int CityID = getCityIDFromMongoDB();
-		System.out.println("Using CityID: " + CityID);
-		
-
-		JsonObject randomWeather = getWeatherFromAPI(CityID);
-		System.out.println("Got Weather: " + randomWeather);
-		
-		randomWeather = WeatherAvroSchemaRenamer(randomWeather);
-		System.out.println("Renaming 1h and 3h to one_h and three_h in snow and rain");
-		
-        randomWeather = WeatherAvroSchemaTypeSpecifier(randomWeather);
-        System.out.println("Specificed data types for fields with null options");
-        
-        randomWeather = WeatherAvroSchemaDefaulter(randomWeather);
-        System.out.println("Defaulted to null for missing fields");
-        
-        String schemaRegistryUrl = "https://psrc-4r0k9.westus2.azure.confluent.cloud";
-		Schema schema = getSchemaFromSchemaRegistry(schemaRegistryUrl);
-		System.out.println("Got schema from schema registry: " + schema);
-        
-        ProducerRecord<Object, Object> record = sendWeatherToKafka(randomWeather,schema,schemaRegistryUrl);
-		System.out.println("Sent record to Kafka: " + record);
+		while (true) {
+			int CityID = getCityIDFromMongoDB();
+			System.out.println("Using CityID: " + CityID);
+			
+			JsonObject randomWeather = getWeatherFromAPI(CityID);
+			System.out.println("Got Weather: " + randomWeather);
+			
+			randomWeather = WeatherAvroSchemaRenamer(randomWeather);
+			System.out.println("Renaming 1h and 3h to one_h and three_h in snow and rain");
+			
+	        randomWeather = WeatherAvroSchemaTypeSpecifier(randomWeather);
+	        System.out.println("Specificed data types for fields with null options");
+	        
+	        randomWeather = WeatherAvroSchemaDefaulter(randomWeather);
+	        System.out.println("Defaulted to null for missing fields");
+	        
+	        String schemaRegistryUrl = "https://psrc-4r0k9.westus2.azure.confluent.cloud";
+			Schema schema = getSchemaFromSchemaRegistry(schemaRegistryUrl);
+			System.out.println("Got schema from schema registry: " + schema);
+	        
+	        ProducerRecord<Object, Object> record = sendWeatherToKafka(randomWeather,schema,schemaRegistryUrl);
+			System.out.println("Sent record to Kafka: " + record);
+			
+			try {
+				Thread.sleep(10000);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			
+			
+		}
 		
 	}
 	
