@@ -136,7 +136,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>confluent.cloud.WeatherAPIProducer.WeatherAPIProducer</mainClass>
+            <mainClass>confluent.cloud.WeatherAPIProducer</mainClass>
           </manifest>
         </archive>
       </configuration>
