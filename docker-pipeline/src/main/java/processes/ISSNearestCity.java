@@ -18,10 +18,12 @@ public class ISSNearestCity {
 	private Thread t2; 
 	Scanner in;
 	volatile String silencer = "verbose";
+	private String mysqlURL;
 	
 
-	public ISSNearestCity(Scanner in) {
+	public ISSNearestCity(Scanner in, String mysqlURL) {
 		this.in = in;
+		this.mysqlURL = mysqlURL;
 		t1 = new Thread(new executer());
 		t2 = new Thread(new silenceListener());
 		t1.start();    
@@ -33,7 +35,7 @@ public class ISSNearestCity {
 			
 			SharedSpecificConsumer<ISS> issConsumer =  new SharedSpecificConsumer<ISS>("13.82.6.66:9092","http://13.82.6.66:8081","ISS");
 			SharedSpecificProducer<NearestCity> nearestProducer = new SharedSpecificProducer<NearestCity>("13.82.6.66:9092","http://13.82.6.66:8081");
-			mysql mysql = new mysql("jdbc:mysql://13.82.6.66:3306");
+			mysql mysql = new mysql(mysqlURL);
 
 			issConsumer.subscribeAndHandleRebalance("ISS");
 			while (true) {

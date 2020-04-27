@@ -20,7 +20,7 @@ public class Entry {
 		
 				 switch (selection) {
 					 case 1: {
-						 new ISSNearestCity(in);
+						 new ISSNearestCity(in,"jdbc:mysql://13.82.6.66:3306");
 						 break;
 					 }
 					 case 2: {
@@ -32,7 +32,7 @@ public class Entry {
 			} else if(args[i].equals("ISSNearestCity")) {
 				
 				System.out.println("Executing: " + args[i]);
-				new ISSNearestCity(in);
+				new ISSNearestCity(in,"jdbc:mysql://mysql:3306");
 				
 			} else if (args[i].equals("WeatherAtCity")) {
 				
