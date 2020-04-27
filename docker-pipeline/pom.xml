@@ -139,7 +139,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>classes/</classpathPrefix>
-            <mainClass>processes.entry</mainClass>
+            <mainClass>processes.Entry</mainClass>
           </manifest>
         </archive>
       </configuration>
