@@ -1,0 +1,31 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "latitude",
+      "type": "float"
+    },
+    {
+      "name": "longitude",
+      "type": "float"
+    },
+    {
+      "name": "EuclidianDistance",
+      "type": "float"
+    }
+  ],
+  "name": "NearestCity",
+  "namespace": "schemas.NearestCity",
+  "type": "record"
+}

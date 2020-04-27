@@ -28,3 +28,5 @@ while True:
 
 c.close()
 
+
+c.

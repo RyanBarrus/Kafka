@@ -19,11 +19,16 @@ openWeatherMap = cfg.pwd['openWeatherMap']
 client = pymongo.MongoClient(
     f"mongodb+srv://ryanbarrus:{mongoDB}@cluster0-wxksn.azure.mongodb.net/test?retryWrites=true&w=majority",
     ssl=True)
+
 weather = client['Weather']
 cities = weather['Cities']
+cities.fin
+
 CityCount = cities.count_documents({}) - 1
 RandomCity = randrange(0, CityCount)
 CityID = cities.find().limit(1).skip(RandomCity)[0]['_id']
+
+cities.find_one()
 
 # call the weather api to
 r = requests.get(f'http://api.openweathermap.org/data/2.5/weather?id={CityID}&APPID={openWeatherMap}')

@@ -1,0 +1,19 @@
+{
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "latitude",
+      "type": "float"
+    },
+    {
+      "name": "longitude",
+      "type": "float"
+    }
+  ],
+  "name": "ISS",
+  "namespace": "schemas.ISS",
+  "type": "record"
+}
