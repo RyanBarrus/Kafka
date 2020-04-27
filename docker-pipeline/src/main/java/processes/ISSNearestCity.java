@@ -98,9 +98,13 @@ public class ISSNearestCity {
 	    
 		public mysql (String url) {
 			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection conn = DriverManager.getConnection(url,"root","TrainKafka1!");
 				this.conn = conn;
 			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
