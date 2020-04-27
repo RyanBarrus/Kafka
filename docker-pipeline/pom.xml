@@ -139,7 +139,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>classes/</classpathPrefix>
-            <mainClass>confluent.cloud.WeatherAPIProducer</mainClass>
+            <mainClass>processes.entry</mainClass>
           </manifest>
         </archive>
       </configuration>
